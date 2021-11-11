@@ -1,9 +1,12 @@
 {
 	"folders": [
 		{
-			"name": "CS50",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.exclude": {
+			"**/*.rpyc": true
+		}
+	}
 }
