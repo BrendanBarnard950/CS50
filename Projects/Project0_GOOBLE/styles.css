@@ -1,0 +1,12 @@
+#FullPage {
+    background-image: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+    background-size: cover;
+    height: inherit;
+    width: inherit;
+}
+
+#GoobleLogo {
+    top: 50%;
+    left: 50%;
+    size: inherit;
+}
