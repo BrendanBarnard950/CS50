@@ -4,11 +4,20 @@
         <title>Gooble</title>
         <link href="styles.css" rel="stylesheet">
     </head>
-    <body >   
-        <div id = "FullPage">
+    <body class = "container">   
+        <div class = "bottom">
             <div >
-                <img src="GoobleLogo.png" id = "GoobleLogo">
+               <a href = "image.html" class = "navibuttons" ><button>Image Search</button></a> 
+               <a href = "advanced.html" class = "navibuttons"><button>Advanced Search</button></a>
             </div>
+            <div>
+                <img src="GoobleLogo.png" class = "GoobleLogo" alt = "Gooble">
+            </div>
+            <form action="https://google.com/search">
+                <input type="text" name="q" class="SearchBox">
+                <input type="submit" value="Search" class = "SearchButton"/>  
+                <input value="I'm Feeling Lucky" aria-label="I'm Feeling Lucky" id="lucky" name="btnI" type="submit" data-ved="0ahUKEwiNm6S0jYLrAhXslnIEHYv2B30QnRsIDg" class = "SearchButton">            
+            </form>
         </div>
     </body>
 </html>
