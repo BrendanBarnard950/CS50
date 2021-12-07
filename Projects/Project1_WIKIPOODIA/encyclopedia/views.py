@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import random
 
 from . import util
 
@@ -14,9 +15,10 @@ def article_view(request, title):
         return render(request, "encyclopedia/404.html", {
             "title": title
         })
-    else:
+    else:    
         return render(request, "encyclopedia/article.html", {
-            "contents": util.get_entry(title),
+            "contents": util.markdown_to_html(util.get_entry(title)),
+
             "title" : title
         })
 
@@ -49,4 +51,17 @@ def newpage_view(request):
     else:
         util.save_entry(request.POST.get('title'), request.POST.get('content'))
         return article_view(request, request.POST.get('title'))
-        
+
+
+def random_view(request):
+    x = util.list_entries()
+    i = random.randrange(0, len(x))
+    article = x[i]
+    return article_view(request, article)
+
+def edit_view(request):
+    title = request.GET.get('head')
+    return render(request, "encyclopedia/editpage.html", {
+            "contents": util.get_entry(title),
+            "title" : title
+        })
