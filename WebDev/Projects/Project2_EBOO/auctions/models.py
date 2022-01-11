@@ -5,7 +5,7 @@ from django.forms.fields import DateTimeField
 
 
 class User(AbstractUser):
-    wishlist = models.ManyToManyField('Listings')
+    wishlist = models.ManyToManyField('Listings', blank = True)
 
 class Catagories(models.Model):
     name = models.CharField(max_length=20)
